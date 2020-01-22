@@ -1,0 +1,14 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+      "baseUrl": "/",
+      "lib": ["es7"],
+      "outDir" : "output_js",
+      "declaration": false,
+      "types" : ["jasmine", "node"],
+      "skipLibCheck": true
+    },
+    "exclude": [
+      "node_modules/*"
+    ]
+}   
