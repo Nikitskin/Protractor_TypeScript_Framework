@@ -2,6 +2,7 @@ Requirements:
 - Node.js installed
 - Windows 10
 - Java 8 
+- Chrome
 
 Running flow:
 

@@ -3,14 +3,13 @@ var LoginPage = require("../Pages/LoginPage");
 
 describe('Login page testing', () => {
     let email = "Test@email.com";
-    let urlLink = "https://demo-v2.grip.tools"
     let loginPage;
 
     beforeEach(async function (){
         await browser.waitForAngularEnabled(false);
         //Precondition: Maximize page and navigate to login page
         await browser.manage().window().maximize();
-        await browser.get(urlLink);
+        await browser.get(browser.baseUrl);
         loginPage = new LoginPage();
     });
 
@@ -30,7 +29,7 @@ describe('Login page testing', () => {
         //1. Navigate to http url
         await browser.get('http://demo-v2.grip.tools/login');
         //2. Browser renavigated to https
-        expect(await browser.getCurrentUrl()).toEqual("https://demo-v2.grip.tools/login");
+        expect(await browser.getCurrentUrl()).toEqual(browser.baseUrl + "/login");
     });
 
     it('Check email field validation', async() => {
@@ -101,7 +100,7 @@ describe('Login page testing', () => {
         //3. Click 'forgot your password' link
         await loginPage.clickForgotYourPasswordLink();
         //4. Verify url changed
-        expect(await browser.getCurrentUrl()).toEqual(urlLink + "/password-recovery?email=" + email);
+        expect(await browser.getCurrentUrl()).toEqual(browser.baseUrl + "/password-recovery?email=" + email);
     }); 
 
     it('Signup button navigates to signup page', async () => {

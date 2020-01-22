@@ -11,6 +11,7 @@ export const config: Config = {
     SELENIUM_PROMISE_MANAGER: false,
     restartBrowserBetweenTests: false,
     framework: "jasmine",
+    baseUrl: "https://demo-v2.grip.tools",
     capabilities: {
         browserName: "chrome"
         },
